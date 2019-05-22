@@ -33,6 +33,8 @@ export default class BurguerIngredient extends Component {
             default: ingredient = null;
 
         }
+
+        ingredient = <div className={this.props.type}></div>
         return ingredient
 
     }
