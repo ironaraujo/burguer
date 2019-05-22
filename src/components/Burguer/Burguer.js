@@ -4,7 +4,7 @@ import BurguerIngredient from './BurguerIngredient/BurguerIngredient';
 
 const burguer = () => {
     return (
-        <div className={classes.Burguer}>
+        <div className={"Burguer"}>
             <BurguerIngredient type="bread-top" />
             <BurguerIngredient type="cheese" />
             <BurguerIngredient type="meat" />
