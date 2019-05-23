@@ -1,42 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, withStyles } from 'react';
 import PropTypes from 'prop-types';
-import classes from './BurguerIngredient.css'
-
-export default class BurguerIngredient extends Component {
-    state = {}
+import './BurguerIngredient.css'
 
 
-    render() {
-        let ingredient = null;
-        switch (this.props.type) {
-            case ('bread-bottom'):
-                ingredient = <div className={classes.BreadBottom}></div>
-                break;
-            case ('bread-top'):
-                ingredient = <div className={classes.BreadTop}>
-                    <div> className={classes.Seeds1}</div>
-                    <div> className={classes.Seeds2}</div>
-                </div>
-                break;
-            case ('meat'):
-                ingredient = <div className={classes.meat}></div>
-                break;
-            case ('cheese'):
-                ingredient = <div className={classes.cheese}></div>
-                break;
-            case ('bacon'):
-                ingredient = <div className={classes.bacon}></div>
-                break;
-            case ('salad'):
-                ingredient = <div className={classes.salad}></div>
-                break;
-            default: ingredient = null;
-
+const styles = () => (
+    {
+        BreadTop : {
+            height: '20%',
+            width: '80%',
+            background: 'linear-gradient(#bc581e, #e27b36)',
+            borderRadius: '50% 50% 0 0',
+            boxShadow: 'inset -15px 0 #c15711',
+            margin: '2% auto',
+            position: 'relative',
         }
+    }
+)
 
-        ingredient = <div className={this.props.type}></div>
-        return ingredient
-
+class BurguerIngredient extends Component {
+    
+    render() {
+        return <div className={this.props.type}></div>    
     }
 }
 
@@ -44,3 +28,7 @@ export default class BurguerIngredient extends Component {
 BurguerIngredient.propTypes={
     type: PropTypes.string.isRequired
 }
+
+
+
+export default BurguerIngredient
